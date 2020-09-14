@@ -16,14 +16,14 @@ class Instraments {
     console.log(
       "hello, I am a " + this.type,
       ". I make a " + this.verb,
-      "sound at " + this.loudness + "volume."
+      " sound at " + this.loudness + "volume."
     );
     textArray.push(
       "  Hello, I am a " +
         this.type +
         ". I make a " +
         this.verb +
-        "sound at " +
+        " sound at " +
         this.loudness +
         "volume." +
         "<br></br>"
