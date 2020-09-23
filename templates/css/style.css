@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html,
+body {
+  height: 100%; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-bottom: 16px;
+  color: beige; }
+
+#container {
+  height: 100%;
+  width: 100%;
+  /*   background-image: linear-gradient(
+      rgba(242, 92, 84, 0.2),
+      rgba(242, 92, 84, 0.2)
+    ),
+    url("../images/hero.jpg"); */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7));
+  background-position: center;
+  background-size: cover; }
+
+#homeContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  height: 80%;
+  width: 100%; }
+
+#enterSite {
+  box-shadow: #fff6af 0px 1px 0px 0px;
+  background: linear-gradient(#ffec64 5%, #ffab23 100%) #ffec64;
+  border-radius: 6px;
+  border: 1px solid #ffaa22;
+  display: inline-block;
+  cursor: pointer;
+  color: #333333;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: #ffee66 0px 1px 0px; }
+
+#runBtn {
+  box-shadow: #fff6af 0px 1px 0px 0px;
+  background: linear-gradient(#ffec64 5%, #ffab23 100%) #ffec64;
+  border-radius: 6px;
+  border: 1px solid #ffaa22;
+  display: inline-block;
+  cursor: pointer;
+  color: #333333;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: #ffee66 0px 1px 0px; }
+
+#feedBtn {
+  box-shadow: #fff6af 0px 1px 0px 0px;
+  background: linear-gradient(#ffec64 5%, #ffab23 100%) #ffec64;
+  border-radius: 6px;
+  border: 1px solid #ffaa22;
+  display: inline-block;
+  cursor: pointer;
+  color: #333333;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: #ffee66 0px 1px 0px; }
+
+#btnHolder {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  position: absolute;
+  margin-top: 25%; }
+
+#inputHolder {
+  position: absolute; }
+
+.nav-holder {
+  /*  background-color: cadetblue; */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-image: linear-gradient(rgba(135, 181, 235, 0.9), rgba(0, 0, 84, 0));
+  height: 20%;
+  width: 100%; }
+
+.nav-holder a {
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color: beige; }
+
+.nav-holder a:hover {
+  background-image: linear-gradient(#87b5eb, rgba(0, 0, 84, 0)); }
