@@ -12,22 +12,24 @@ class VirtualRiot {
     this.firstName = firstName;
     this.lastName = lastName;
     this.hunger = 0;
-    this.energy = 100;
+    this.energy = 10;
   }
   render() {
     return `<div id="homeContent">
 
-    <p>Name : ${this.firstName} ${this.lastName} </p>
-    <p>Hunger :${this.hunger} </p>
-    <p>Energy : ${this.energy} </p>
+    <p> Product Options : ${this.firstName} and ${this.lastName} </p>
+    <p>Total :${this.hunger} </p>
+    <p>Stock : ${this.energy} </p>
     </div>`;
   }
   run() {
-    this.hunger++;
-    this.energy = this.energy - 5;
+    this.hunger = this.hunger + 2.99;
+    this.energy = this.energy - 1;
+    if (this.energy < 0) {
+      alert("yo");
+    }
   }
   feed() {
-    this.hunger--;
     this.energy++;
   }
   sleep() {
@@ -40,7 +42,7 @@ function superInit() {
   function init() {
     $("#runBtn").css("display", "none");
     $("#feedBtn").css("display", "none");
-    $("#sleepBtn").css("display", "none");
+
     $("#inputHolder").css("display", "none");
   }
   init();
@@ -64,7 +66,7 @@ function superInit() {
       $("#homeContent").html(displayPet);
       $("#runBtn").css("display", "flex");
       $("#feedBtn").css("display", "flex");
-      $("#sleepBtn").css("display", "flex");
+
       $("#enterSite").css("display", "none");
       $("#inputHolder").css("display", "none");
       function decEnergy() {
@@ -85,16 +87,6 @@ function superInit() {
         });
       }
       feedPet();
-
-      function sleep() {
-        $("#sleepBtn").click(function(e) {
-          console.log("sleepClick");
-          myPet.sleep();
-          var upDate = myPet.render();
-          $("#homeContent").html(upDate);
-        });
-      }
-      sleep();
     });
   }
   submitName();
