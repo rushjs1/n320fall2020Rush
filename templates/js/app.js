@@ -1,8 +1,3 @@
-function hello() {
-  var yo = "Mwuahahahaahahahahhah";
-  console.log(yo);
-}
-
 $(document).ready(function() {
   superInit();
 });
@@ -18,19 +13,23 @@ class VirtualRiot {
     return `<div id="homeContent">
 
     <p> Product Options : ${this.firstName} and ${this.lastName} </p>
-    <p>Total :${this.hunger}$ </p>
+    <p>Total :${this.hunger.toFixed(2)}$ </p>
     <p>Stock : ${this.energy} </p>
     </div>`;
   }
   run() {
     this.hunger = this.hunger + 2.99;
     this.energy = this.energy - 1;
-    if (this.energy < 0) {
-      alert("yo");
+    if (this.energy == 0) {
+      alert("Out of Stock");
+      $("#runBtn").css("display", "none");
     }
   }
   feed() {
     this.energy++;
+    if (this.energy > 0) {
+      $("#runBtn").css("display", "flex");
+    }
   }
   sleep() {
     this.hunger++;
