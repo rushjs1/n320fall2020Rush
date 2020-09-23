@@ -1,0 +1,86 @@
+#container {
+  height: 100%;
+  width: 100%;
+
+  /*   background-image: linear-gradient(
+      rgba(242, 92, 84, 0.2),
+      rgba(242, 92, 84, 0.2)
+    ),
+    url("../images/hero.jpg"); */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7));
+
+  background-position: center;
+  background-size: cover;
+}
+
+#homeContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  height: 80%;
+  width: 100%;
+}
+
+#enterSite {
+  box-shadow: rgb(255, 246, 175) 0px 1px 0px 0px;
+  background: linear-gradient(rgb(255, 236, 100) 5%, rgb(255, 171, 35) 100%)
+    rgb(255, 236, 100);
+  border-radius: 6px;
+  border: 1px solid rgb(255, 170, 34);
+  display: inline-block;
+  cursor: pointer;
+  color: rgb(51, 51, 51);
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: rgb(255, 238, 102) 0px 1px 0px;
+}
+#runBtn {
+  box-shadow: rgb(255, 246, 175) 0px 1px 0px 0px;
+  background: linear-gradient(rgb(255, 236, 100) 5%, rgb(255, 171, 35) 100%)
+    rgb(255, 236, 100);
+  border-radius: 6px;
+  border: 1px solid rgb(255, 170, 34);
+  display: inline-block;
+  cursor: pointer;
+  color: rgb(51, 51, 51);
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: rgb(255, 238, 102) 0px 1px 0px;
+}
+#feedBtn {
+  box-shadow: rgb(255, 246, 175) 0px 1px 0px 0px;
+  background: linear-gradient(rgb(255, 236, 100) 5%, rgb(255, 171, 35) 100%)
+    rgb(255, 236, 100);
+  border-radius: 6px;
+  border: 1px solid rgb(255, 170, 34);
+  display: inline-block;
+  cursor: pointer;
+  color: rgb(51, 51, 51);
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: rgb(255, 238, 102) 0px 1px 0px;
+}
+
+#btnHolder {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  position: absolute;
+  margin-top: 25%;
+}
+
+#inputHolder {
+  position: absolute;
+}

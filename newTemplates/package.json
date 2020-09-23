@@ -1,12 +1,13 @@
 {
-  "name": "newtemplates",
+  "name": "templates",
   "version": "1.0.0",
-  "description": "",
+  "description": "practice",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "node-sass sass/main.scss css/style.css -w"
   },
-  "author": "John Rush",
+  "author": "John",
   "license": "ISC",
   "devDependencies": {
     "node-sass": "^4.14.1"
