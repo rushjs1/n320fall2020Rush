@@ -18,7 +18,7 @@ class VirtualRiot {
     return `<div id="homeContent">
 
     <p> Product Options : ${this.firstName} and ${this.lastName} </p>
-    <p>Total :${this.hunger} </p>
+    <p>Totall :${this.hunger} </p>
     <p>Stock : ${this.energy} </p>
     </div>`;
   }
