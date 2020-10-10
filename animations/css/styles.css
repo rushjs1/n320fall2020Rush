@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-bottom: 16px;
+  color: navy;
+}
+
+#wholePage {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+
+  background-color: beige;
+}
+
+#blueRectContainer {
+  width: 100%;
+  height: 30%;
+  background-color: navy;
+}
+
+#purpContainer {
+  height: 30%;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-basis: row;
+  flex-wrap: wrap;
+}
+.purpRect {
+  height: 30%;
+  width: 30%;
+  background-color: darkmagenta;
+}
+#title {
+  margin-right: 90%;
+}
