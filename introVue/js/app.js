@@ -12,7 +12,7 @@ function go() {
   new Vue({
     el: "#app",
     data: {
-      message: "Book types",
+      message: "Here is a list of our books",
       ready: true,
       books: [
         {
@@ -34,7 +34,7 @@ function go() {
           price: 16,
           name: "the outsiders",
           author: "S.E. Hinton",
-          author: "♣️"
+          emoji: "♣️"
         }
       ]
     },
