@@ -1,0 +1,109 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-88.090032, 42.478386]
+      },
+      "properties": {
+        "title": "CIRCUIT SYSTEMS, INC",
+        "name": "CIRCUIT SYSTEMS, INC",
+        "city": "ANTIOCH, IL",
+        "epaRegistyId": 110000428653
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-87.99213, 42.13269]
+      },
+      "properties": {
+        "title": "CARLSON LABORATORIES INC",
+        "name": "CARLSON LABORATORIES INC",
+        "city": "ANTIOCH, IL",
+        "epaRegistyId": 110000428662
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-87.998088, 42.054469]
+      },
+      "properties": {
+        "title": "SHELL PIPELINE COMPANY LP",
+        "name": "SHELL PIPELINE COMPANY LP",
+        "city": "ARLINGTON HEIGHTS, IL",
+        "epaRegistyId": 110000428680
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-87.998088, 42.054469]
+      },
+      "properties": {
+        "title": "SHELL PIPELINE COMPANY LP",
+        "name": "SHELL PIPELINE COMPANY LP",
+        "city": "ARLINGTON HEIGHTS, IL",
+        "epaRegistyId": 110000428680
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-87.948921, 42.02451]
+      },
+      "properties": {
+        "title": "EXXONMOBIL OIL CORP DES PLAINES TERMINAL",
+        "name": "EXXONMOBIL OIL CORP DES PLAINES TERMINAL",
+        "city": "ARLINGTON HEIGHTS, IL",
+        "epaRegistyId": 110000428699
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-87.99427, 42.04733]
+      },
+      "properties": {
+        "title": "WEBER PACKAGING SOLUTIONS INC DBA WEBER MARKING SYSTEMS INC",
+        "name": "WEBER PACKAGING SOLUTIONS INC DBA WEBER MARKING SYSTEMS INC",
+        "city": "ARLINGTON HEIGHTS, IL",
+        "epaRegistyId": 110000428715
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-87.952949, 41.994026]
+      },
+      "properties": {
+        "title": "CHEM-PLATE INDUSTRIES INC",
+        "name": "CHEM-PLATE INDUSTRIES INC",
+        "city": "ARLINGTON HEIGHTS, IL",
+        "epaRegistyId": 110000428733
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-88.070057, 42.210655]
+      },
+      "properties": {
+        "title": "HYDRITE CHEMICAL CO",
+        "name": "HYDRITE CHEMICAL CO",
+        "city": "ARLINGTON HEIGHTS, IL",
+        "epaRegistyId": 110000429572
+      }
+    }
+  ]
+}

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>n320-mapBox</title>
+    <meta
+      name="viewport"
+      content="initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js"></script>
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #c5e7cd;
+      }
+      #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 60%;
+        height: 80%;
+      }
+      .mapContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+      }
+      .textContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mapContainer">
+      <div id="map"></div>
+    </div>
+    <div class="textContainer">
+      <h2>N320 - Mapbox</h2>
+    </div>
+    <script>
+      mapboxgl.accessToken =
+        "pk.eyJ1IjoicnVzaGpzIiwiYSI6ImNrZ2J5cjB5bDBsb3gyenF1aWlvM3pteTIifQ.O_gv1VxHLDvC-UlG7dTYOA";
+      var map = new mapboxgl.Map({
+        style: "mapbox://styles/mapbox/light-v10",
+        center: [-86.1760833143159, 39.774165701267734],
+        zoom: 15.5,
+        pitch: 65,
+        bearing: -17.6,
+        container: "map",
+        antialias: true
+      });
+
+      // The 'building' layer in the mapbox-streets vector source contains building-height
+      // data from OpenStreetMap.
+      map.on("load", function() {
+        // Add an image to use as a custom marker
+        map.loadImage("images/jag.png", function(error, image) {
+          if (error) throw error;
+          map.addImage("custom-marker", image);
+
+          // Add a GeoJSON source for our Iupui campus spots. I will name the source ID "iupui" we can reference the source with this later
+
+          map.addSource("iupui", {
+            type: "geojson",
+            data: "data/iupuiCampus.json"
+          });
+          // Add a symbol layer
+          map.addLayer({
+            id: "iupui",
+            type: "symbol",
+            source: "iupui",
+            layout: {
+              "icon-image": "custom-marker",
+              // get the title name from the source's "title" property
+              "text-field": ["get", "title"],
+              "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
+              "text-offset": [0, 1.25],
+              "text-anchor": "top"
+            }
+          });
+        });
+
+        //// JSON FILE /////
+        map.addSource("Spots", {
+          type: "geojson",
+          // Point to GeoJSON data. This example is plotting a few points where each point represents a FRS Facility that has been reported by the United States Enviromental Protection Agency for various greenhouse gas emmission violations. I have gathered this public data set by searching around and Downloading CSV files of Facilities in Illinois from back in 2012.
+
+          // Something to Note That I have learned from this is that geospatial data is generally recorded in Geojson Format.. Geojson format looks very similar to normal json , however it has 3 main keys which are type, geometery and properties. Longitude and Latitude coordinates are stored into the geometry section in a array, and Information such as ID, name, city can be recorded in the properties key.
+
+          //This creates a univeral process and standard people to follow when handeling large sets of geo data.. Additionally, it helps to create organized expirence for saving and processing large  geospacial data sets.
+
+          // for the sake of this Project, I hand typed the Geojson used from the CSV files I downloaded. I played for awhile with CSV to JSON converters so I could of had a larger data set to play with but had no luck.
+          data: "data/d.json",
+          cluster: true,
+          clusterMaxZoom: 14,
+          clusterRadius: 50
+        });
+
+        map.addLayer({
+          id: "clusters",
+          type: "circle",
+          source: "Spots",
+          filter: ["has", "point_count"],
+          paint: {
+            // Here we use step expressions to set the various incraments in which our clusters will hold points. I have a small data set but If i were to have a lager one this would represent like this. At a given zoomed out position where we see 750+ points in the given bound, it will be represented by 1 yellow circle at a radius of "40". Next, upon new click the spots will expand and each cluster spot will points at a count from  100-750 points, at a radius of 30. However, in my example you only see the red value, as I dont have over 100 spots.  (https://docs.mapbox.com/mapbox-gl-js/style-spec/#expressions-step)
+            // with three steps to implement three types of circles:
+            //   * Red, 20px circles when point count is less than 100
+            //   * Yellow, 30px circles when point count is between 100 and 750
+            //   * Yellow, 40px circles when point count is greater than or equal to 750
+            "circle-color": [
+              "step",
+              ["get", "point_count"],
+              "#ff483f",
+              100,
+              "#f1f075",
+              750,
+              "#f1f075"
+            ],
+            "circle-radius": [
+              "step",
+              ["get", "point_count"],
+              20,
+              100,
+              30,
+              750,
+              40
+            ]
+          }
+        });
+
+        // adding an additional style layer using the same Spot source. This layer is using the symbol layer type meaning we can specify a "layout" and define its properities such as text font and text size.
+        map.addLayer({
+          id: "cluster-count",
+          type: "symbol",
+          source: "Spots",
+          filter: ["has", "point_count"],
+          layout: {
+            "text-field": "{point_count_abbreviated}",
+            "text-font": ["DIN Offc Pro Medium", "Arial Unicode MS Bold"],
+            "text-size": 14
+          }
+        });
+
+        // Here we are adding another style layer, this time we are refrenceing all of our individual points at their most unclustered  position, or when the user is most zoomed in on that area. We are also using the "circle" layer type, so we can also define its properties as values inside a key we can call "paint". In my case, I am changing styles slightly, however, I was sticking to the documentation to gather the information for properties I should be using such a circle-radius , stroke-width, etc ... as well as the filter key, and its properties are also taken from mapbox clusters documentation.
+
+        map.addLayer({
+          id: "unclustered-point",
+          type: "circle",
+          source: "Spots",
+          filter: ["!", ["has", "point_count"]],
+          paint: {
+            "circle-color": "#ff483f",
+            "circle-radius": 6,
+            "circle-stroke-width": 0.1,
+            "circle-stroke-color": "#fff"
+          }
+        });
+
+        //on click function for our clusters ... this wont apply for an unclustered point. we will handle the click of the unclustered point later on.
+        // Since we have now registered our geoJson as these mapbox "points", we are able to interact with them using mapboxs methods. I again am referencing mapbox documentation on how to handle this.
+        // basically what is seemingly happening is we are defining a new feature to render and assigning them to each cluster that the user clicks on.
+        // next we can call map.getSource and pass through our Spots source containing our geojson information.
+        //next we call getClustserExpansionZoom an pass through what ever cluster id that has been clicked on.  after that we are using the map.easeTo method to fly to that position on the map. This creats a very fun and smooth experience for loading in and displaying large data sets.
+
+        map.on("click", "clusters", function(e) {
+          var features = map.queryRenderedFeatures(e.point, {
+            layers: ["clusters"]
+          });
+          var clusterId = features[0].properties.cluster_id;
+          map
+            .getSource("Spots")
+            .getClusterExpansionZoom(clusterId, function(err, zoom) {
+              if (err) return;
+
+              map.easeTo({
+                center: features[0].geometry.coordinates,
+                zoom: zoom
+              });
+            });
+        });
+
+        // When a click event occurs on a feature in
+        // the unclustered-point layer, open a popup at
+        // the location of the feature, with
+        // description HTML from its properties.
+        map.on("click", "unclustered-point", function(e) {
+          var spotName = e.features[0].properties.name;
+          var epaRegistryId = e.features[0].properties.epaRegistyId;
+          var coordinates = e.features[0].geometry.coordinates.slice();
+          // Ensure that if the map is zoomed out such that
+          // multiple copies of the feature are visible, the
+          // popup appears over the copy being pointed to.
+
+          while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+            coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+          }
+          // Finally, define new mapboxgl.Popup .. we pass the coordinates of the clicked point to the setLngLat method , and
+          new mapboxgl.Popup()
+            .setLngLat(coordinates)
+            .setHTML(spotName + "<br />" + "EPA Facility ID: " + epaRegistryId)
+            .addTo(map);
+        });
+
+        ////FOR 3d  BUILDINGS
+
+        // Insert the layer beneath any symbol layer.
+        var layers = map.getStyle().layers;
+        var labelLayerId;
+
+        // ADDing layer
+        // We use the mapbox fill-extrusion type to render the height of buildings in 3d.
+
+        //fill-extrusion style layer renders one or more filled extruded (3D) polygons on a map.
+
+        // we use fill-extrustion-color, this is the base color of the extruded fill.
+        // next, we use fill-extrustion-height , this is the height with which to extrude this layer.
+        map.addLayer(
+          {
+            id: "3d-buildings",
+            source: "composite",
+            "source-layer": "building",
+            filter: ["==", "extrude", "true"],
+            type: "fill-extrusion",
+            minzoom: 1,
+            paint: {
+              "fill-extrusion-color": "#00ff00",
+
+              // Here, 'interpolate' expression is used to add a smooth transition effect to the buildings as the user zooms in.. interpolate between pairs of input and output values, Here it is the various heights of a given building as the user zooms.
+              // https://docs.mapbox.com/mapbox-gl-js/style-spec/layers/#fill-extrusion
+              "fill-extrusion-height": [
+                "interpolate",
+                ["linear"],
+                ["zoom"],
+                15,
+                0,
+                15.05,
+                ["get", "height"]
+              ],
+
+              //fill-extrusion-base
+
+              //The height with which to extrude the base of this layer. Must be less than or equal to fill-extrusion-height.
+              // As we decrease from a zoom level of 14 to 1, at level 14 we start to notice the buildings decreasing there fill-extrusion height.
+              "fill-extrusion-base": [
+                "interpolate",
+                ["linear"],
+                ["zoom"],
+                14,
+                0,
+                15.05,
+                ["get", "min_height"]
+              ],
+              "fill-extrusion-opacity": 0.6
+            }
+          },
+          labelLayerId
+        );
+      });
+    </script>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>

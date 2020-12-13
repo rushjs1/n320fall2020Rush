@@ -1,0 +1,355 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-86.16752039943738, 39.77416766628657]
+      },
+      "properties": {
+        "title": "School of Informatics and Computing"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-86.17248487127858, 39.774194040807544]
+      },
+      "properties": {
+        "title": "School of Engineering and Technology"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-86.17215802224953, 39.77313838982772]
+      },
+      "properties": {
+        "title": "University Library - IUPUI"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-86.17312425624095, 39.77347474664714]
+      },
+      "properties": {
+        "title": "Kelley School of Buisness at IUPUI"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-86.17257551880598, 39.77406937571676]
+      },
+      "properties": {
+        "title": "IUPUI - Purdue School of Engineering and Technology"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-86.1760833143159, 39.774165701267734]
+      },
+      "properties": {
+        "title": "Campus Center - IUPUI"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-86.17148864976403, 39.77141050365541]
+      },
+      "properties": {
+        "title": "Herron School of Art and Design"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-86.1676536033583, 39.772142130448636]
+      },
+      "properties": {
+        "title": "McKinney School of Law"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-86.18002548917929, 39.77384728819473]
+      },
+      "properties": {
+        "title": "Indiana University School of Dentistry"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-86.18061609556487, 39.7754234081539]
+      },
+      "properties": {
+        "title": "Indiana University School of Health and Rehabilitation Sciences"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-86.1780447691623, 39.77134068458172]
+      },
+      "properties": {
+        "title": "Carrol Staduium"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-86.17614852795292, 39.77572503624913]
+      },
+      "properties": {
+        "title": "IU Health University Hospital"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-86.17547337071605, 39.77120305893839]
+      },
+      "properties": {
+        "title": "IUPUI Natitorium"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-86.17501035766495, 39.7729854610492]
+      },
+      "properties": {
+        "title": "IUPUI Lecture Halls"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-86.1706882288739, 39.77271160479718]
+      },
+      "properties": {
+        "title": "Science and Engineering Laboratory Building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-86.1692592421403, 39.77396189309399]
+      },
+      "properties": {
+        "title": "Innovation Hall"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-86.17083418035024, 39.7741227876927]
+      },
+      "properties": {
+        "title": "SL Building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-86.17059781108291, 39.773327528455695]
+      },
+      "properties": {
+        "title": "Science Building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-86.16804129003805, 39.77384588135408]
+      },
+      "properties": {
+        "title": "ICTC Building"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-86.18282060941014, 39.77549565294812]
+      },
+      "properties": {
+        "title": "IUPUI Police Department"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-86.17931654833646, 39.77621983240608]
+      },
+      "properties": {
+        "title": "IUPUI School of Nursing"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-86.17982962028752, 39.774752993668976]
+      },
+      "properties": {
+        "title": "Indiana University - Internal Medicine Residency"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-86.17271334301991, 39.77601132590879]
+      },
+      "properties": {
+        "title": "North Hall"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-86.17075222167773, 39.7734489365349]
+      },
+      "properties": {
+        "title": "IUPUI Department of Psychology"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-86.17519166387036, 39.77226926946558]
+      },
+      "properties": {
+        "title": "Indiana University Lilly Family School of Philanthropy"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-86.17022391352795, 39.77408110744817]
+      },
+      "properties": {
+        "title": "School of Science - Department of Biology"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-86.17022391352795, 39.77408110744817]
+      },
+      "properties": {
+        "title": "School of Science - Department of Biology"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-86.17057022100418, 39.7733142998302]
+      },
+      "properties": {
+        "title": "Department of Physics"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-86.17064934424712, 39.77331500168971]
+      },
+      "properties": {
+        "title": "Chemistry And Biology"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-86.17195749137322, 39.7727357331539]
+      },
+      "properties": {
+        "title": "IUPUI Graduate Office"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-86.17355529518107, 39.773075632336806]
+      },
+      "properties": {
+        "title": "IU School of Education-Indianapolis"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-86.17429360027688, 39.772015897148876]
+      },
+      "properties": {
+        "title": "IUPUI Office of International Affairs"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-86.17429360027688, 39.772015897148876]
+      },
+      "properties": {
+        "title": "Indiana University School of Social Work"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-86.1752405548597, 39.77383351991134]
+      },
+      "properties": {
+        "title": "Department of Communication Studies"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-86.16755890010285, 39.77388077611055]
+      },
+      "properties": {
+        "title": "Student Technology Centers - IUPUI"
+      }
+    }
+  ]
+}
