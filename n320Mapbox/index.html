@@ -59,8 +59,6 @@
         antialias: true
       });
 
-      // The 'building' layer in the mapbox-streets vector source contains building-height
-      // data from OpenStreetMap.
       map.on("load", function() {
         // Add an image to use as a custom marker
         map.loadImage("images/jag.png", function(error, image) {
@@ -226,6 +224,8 @@
         map.addLayer(
           {
             id: "3d-buildings",
+            // The 'building' layer in the mapbox-streets vector source contains building-height
+            // data from OpenStreetMap.
             source: "composite",
             "source-layer": "building",
             filter: ["==", "extrude", "true"],
