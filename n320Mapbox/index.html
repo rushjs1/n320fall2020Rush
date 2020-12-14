@@ -24,18 +24,106 @@
         bottom: 0;
         width: 60%;
         height: 80%;
+        z-index: 100;
       }
       .mapContainer {
         display: flex;
         justify-content: center;
         align-items: center;
+
         height: 100%;
         width: 100%;
+        z-index: 99;
       }
       .textContainer {
         display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 40%;
+      }
+
+      #flyToCampus {
+        display: flex;
         justify-content: center;
         align-items: center;
+
+        margin: 0px auto;
+        width: 50%;
+        height: 40px;
+        margin-right: 25%;
+
+        border: none;
+        border-radius: 3px;
+        font-size: 20px;
+        text-align: center;
+        color: #fff;
+        background: #f76d68;
+      }
+      #flyToChicago {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        margin: 0px auto;
+        width: 50%;
+        height: 40px;
+        margin-right: 25%;
+
+        border: none;
+        border-radius: 3px;
+        font-size: 20px;
+        text-align: center;
+        color: #fff;
+        background: #f76d68;
+      }
+      @media only screen and (max-width: 600px) {
+        .textContainer {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          margin-top: 90%;
+        }
+      }
+      @media only screen and (max-width: 1300px) {
+        .textContainer {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          margin-top: 60%;
+        }
+      }
+      @media only screen and (max-width: 1500px) {
+        .textContainer {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          margin-top: 60%;
+        }
+      }
+
+      /* For IphoneX */
+      @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
+        .textContainer {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          margin-top: 172%;
+        }
+      }
+      /* For Ipad */
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 3) {
+        .textContainer {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          margin-top: 108%;
+        }
       }
     </style>
   </head>
@@ -45,7 +133,11 @@
     </div>
     <div class="textContainer">
       <h2>N320 - Mapbox</h2>
+      <button id="flyToChicago">Fly To Chicago</button>
+      <button id="flyToCampus">Fly To Campus</button>
     </div>
+    <br />
+
     <script>
       mapboxgl.accessToken =
         "pk.eyJ1IjoicnVzaGpzIiwiYSI6ImNrZ2J5cjB5bDBsb3gyenF1aWlvM3pteTIifQ.O_gv1VxHLDvC-UlG7dTYOA";
@@ -264,6 +356,23 @@
           },
           labelLayerId
         );
+
+        document
+          .getElementById("flyToChicago")
+          .addEventListener("click", event => {
+            map.flyTo({
+              center: [-87.952949, 41.994026],
+              essential: true // this animation is considered essential with respect to prefers-reduced-motion
+            });
+          });
+        document
+          .getElementById("flyToCampus")
+          .addEventListener("click", event => {
+            map.flyTo({
+              center: [-86.16752039943738, 39.77416766628657],
+              essential: true // this animation is considered essential with respect to prefers-reduced-motion
+            });
+          });
       });
     </script>
 
